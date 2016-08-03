@@ -28,7 +28,7 @@ import java.util.*;
  * Project: Sonar-Gerrit Plugin
  * Author:  Tatiana Didik
  * Created: 30.08.2015 13:41
- * <p/>
+ * <p>
  * $Id$
  */
 public class SonarToGerritPublisherTest {

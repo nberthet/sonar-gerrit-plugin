@@ -4,10 +4,13 @@ import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import com.google.gerrit.extensions.api.changes.*;
+import com.google.gerrit.extensions.client.SubmitType;
+import com.google.gerrit.extensions.common.ActionInfo;
 import com.google.gerrit.extensions.common.CommentInfo;
 import com.google.gerrit.extensions.common.DiffInfo;
 import com.google.gerrit.extensions.common.FileInfo;
 import com.google.gerrit.extensions.common.MergeableInfo;
+import com.google.gerrit.extensions.common.TestSubmitRuleInput;
 import com.google.gerrit.extensions.restapi.BinaryResult;
 import com.google.gerrit.extensions.restapi.RestApiException;
 import hudson.FilePath;
@@ -28,7 +31,7 @@ import java.util.*;
  * Project: Sonar-Gerrit Plugin
  * Author:  Tatiana Didik
  * Created: 30.08.2015 13:41
- * <p>
+ *
  * $Id$
  */
 public class SonarToGerritPublisherTest {
@@ -292,6 +295,11 @@ public class SonarToGerritPublisherTest {
                 public DiffInfo diff(String base) throws RestApiException {
                     throw new UnsupportedOperationException("This is a dummy test class");
                 }
+
+                @Override
+                public DiffRequest diffRequest() throws RestApiException {
+                  throw new UnsupportedOperationException("This is a dummy test class");
+                }
             };
         }
 
@@ -428,6 +436,36 @@ public class SonarToGerritPublisherTest {
         @Override
         public CommentApi comment(String id) throws RestApiException {
             throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public Map<String, ActionInfo> actions() throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public List<CommentInfo> commentsAsList() throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public List<CommentInfo> draftsAsList() throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public BinaryResult patch() throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public SubmitType submitType() throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
+        }
+
+        @Override
+        public SubmitType testSubmitType(TestSubmitRuleInput arg0) throws RestApiException {
+          throw new UnsupportedOperationException("This is a dummy test class");
         }
     }
 
